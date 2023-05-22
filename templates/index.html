@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Automation</title>
+    <link rel="stylesheet" type="text/css" href="">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+        }
+    </style>
+    <script src="static/js/tailwind.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="min-h-full">
+        <div class="bg-stone-400 pb-25">
+            <header class="py-5 flex justify-between">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold tracking-tight text-black">Title</h1>
+                </div>
+                <div class="flex items-center">
+                    <div class="ml-4 flow-root lg:ml-6">
+                        <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo">
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <main class="">
+
+            <div class="mx-auto pb-2 py-1 sm:px-6 lg:px-8 text-center bg-gray-100">
+                <div class="inline-flex rounded-md" role="group">
+                    <button class="bg-red-400 border-2 border-red-500 hover:bg-red-300 text-gray-800 font-bold py-2 px-4 rounded-l">
+                        Button1
+                    </button>
+                    <button class="bg-green-400 border-2 border-green-500 hover:bg-green-300 text-gray-800 font-bold py-2 px-4">
+                        Button2
+                    </button>
+                    <button class="bg-green-400 border-2 border-green-500 hover:bg-green-300 text-gray-800 font-bold py-2 px-4">
+                        Button3
+                    </button>
+                    <button class="bg-red-400 border-2 border-red-500 hover:bg-red-300 text-gray-800 font-bold py-2 px-4 ">
+                        Button4
+                    </button>
+                    <button class="bg-red-400 border-2 border-red-500 hover:bg-red-300 text-gray-800 font-bold py-2 px-4 ">
+                        Button5
+                    </button>
+                    <button class="bg-red-400 border-2 border-red-500 hover:bg-red-300 text-gray-800 font-bold py-2 px-4 rounded-r">
+                        Button6
+                    </button>
+                </div>
+            </div>
+            <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+                <h2>{{ current_step }}</h2>
+                <form method="post" action="{{ url_for('start_action') }}">
+                    <button type="submit"
+                            class="rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        Submit
+                    </button>
+                </form>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer class="bg-stone-400">
+    <div class="px-6 py-2 md:flex md:items-center md:justify-between">
+        <div class="flex justify-center space-x-6 md:order-2">
+        </div>
+        <div class="mt-8 md:order-1 md:mt-0">
+            <p class="text-base text-md leading-5 text-black">
+                Footer text
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
